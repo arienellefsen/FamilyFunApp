@@ -1,20 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
+    <meta charset="UTF-8">
     <title>Family Fun App - Activities for family around your aerea</title>
-    <meta charset="utf-8">
+    <!--<meta>tag to control layout on Mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- My CSS and JS -->
+    <!-- My CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Boostrap Files -->
+    <!--Font-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Boostrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
+
+  <header id="masthead">
     <div class="container">
-            <!--Code goes here-->
+    <div class="col-sm-12">
+      <a href="index.html" id="logo">Family Fun</a>
+      <!--Future Enhancement (If time permits)
+      <nav>
+        <a href="index.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav> -->
     </div>
+    </div>
+  </header>
+
+  <div id="main-container" class="container">
+  <div class="col-sm-12">
+    <section class="main-section"> <!--Section 1 starts-->
+      <h1>About Website</h1>
+      <!--Future Enhancement (If time permits)-->
+      <!-- <img src="assets/images/train.jpg" class="auth-image" alt="train"> -->
+
+      <p>Our Family Fun website helps you to find a Activities, Restaurant, Park near your location. which can help you to find a perfect entertainment for children, parents and grandparents to share together.</p>
+
+      <p>Have a fun..</p>
+    </section> <!--End of Section 1 -->
+
+
+    <section class="allbuttons"> <!--all buttons Section 2-->
+      <div id="connect">
+        <h2>Search your Activity</h2>
+    <div class="panel-heading">
+    </div> 
+    
+    <div class="panel-body">
+        <h5>Address</h5>
+        <input type="text" name="address" id="address">
+
+
+  <div> <!-- add 3 drop down-->
+   
+   <div class="dropdown"> <!-- add (a) radius drop down-->
+    <button class="radiusDropdown" type="button" data-toggle="dropdown">Radius
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">10 miles</a></li>
+      <li><a href="#">20 miles</a></li>
+      <li><a href="#">30 miles</a></li>
+      <li><a href="#">more than 30 miles</a></li>
+      </ul>
+   </div> <!-- Ends (a) radius drop down -->
+
+
+  <div class="dropdown"> <!-- add (b) activity drop down-->
+    <button class="activityDropdown" type="button" data-toggle="dropdown">Activity
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Restaurants</a></li>
+      <li><a href="#">Park/Themepark</a></li>
+      <li><a href="#">Museum</a></li>
+      <li><a href="#">Need to add more..</a></li>
+      </ul>
+  </div> <!-- Ends (b) activity drop down -->
+
+
+<div class="dropdown"> <!-- add (c) date drop down -->
+<input type="text" id="datepicker" />
+</div> <!-- Ends (c) date drop down -->
+
+  </div><!-- add 3 drop down ends here-->
+
+
+  </div> 
+  <div class="wrapper">
+  <button class="submit">Submit</button>
+  </div> 
+
+  </div> <!--all buttons ends-->
+
+  </div>
+  </section>
+
+
+
+</div>
+
+
+
+ <footer>
+    <div class="container">
+      Copyright &copy; 2017 AKMMX- Put Team Name
+    </div>
+  </footer>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- My JS -->
     <script src="./assets/javascript/app.js"></script>
+
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+
 </body>
 </html>
+
