@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Family Fun App - Activities for family around your aerea</title>
+    <!--<meta>tag to control layout on Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Font-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Boostrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="container center-block">
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Search Family Fun</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="search">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+    
+        <span class="input-group-btn center-block">
+            <button class="btn btn-primary" type="button" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Search</button>
+        </span>            	
+                </div>
+            </form>
+        </div>
+    
+        <div class="col-md-12">
+
+            <div id="result">
+                <div class="col-md-4">
+              <div class="thumbnail">
+                <img src="http://placehold.it/350x222" alt="">
+                <div class="caption">
+                  <h4 class="title"><a href="#"></a></h4>
+                  <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                </div>
+                <div class="ratings">
+                  <p class="pull-right">15 reviews</p>
+                  <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- My JS -->
+    <script src="./assets/javascript/app.js"></script>
+
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
