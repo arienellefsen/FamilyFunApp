@@ -1,4 +1,4 @@
-// This is our api.openweathermap.org API key
+    // This is our api.openweathermap.org API key
     var APIKey = "9653db8b375a737b2906b1e0b371726c";
 
     // Here we are building the URL we need to query the database
@@ -31,11 +31,9 @@ function getWeatherInfoByZipCode(zipcode){
             var maxfdegree = Math.round(this.temp.max * 9 / 5 + 32);
             var minfdegree = Math.round(this.temp.min * 9 / 5 + 32);
             var iconid = this.weather[0].icon;
-
-            console.log('Max temp: ' +maxfdegree);
             //<img src='http://openweathermap.org/img/w/" + weatherDataIn.weather[0].icon + ".png'>
 
-            $("#weather").append("<tr><td>" 
+            $("#weather-table > tbody").append("<tr><td>" 
                 //+ this.weather[0].main 
                 + "<img src='http://openweathermap.org/img/w/" + this.weather[0].icon + ".png'>"
                 + "</td><td>" 
@@ -47,3 +45,7 @@ function getWeatherInfoByZipCode(zipcode){
 
   }
 
+
+$(document).ready(function(){
+  getWeatherInfoByZipCode('08540');
+});
