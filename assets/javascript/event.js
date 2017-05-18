@@ -14,6 +14,7 @@ function initMap() {
         center: populateMap,
     });
 
+
     //Create a object called family with proprties to be used to search Api eventful 
     var familyFun = {
         keyApi: 'qCDfKZL82TkzJCrr',
@@ -34,6 +35,7 @@ function initMap() {
     };
 
     function handleResponse(response) {
+        console.log(response);
         //Check if we got data from API 
         //If there is no reponse, display message
         if (response.page_count === '0') {
@@ -51,18 +53,26 @@ function initMap() {
             //display map
             $("#map").css('visibility', 'visible');
             
+
+
             //loop through results
             for (var i = 0; i < 10; i++) {
+               
+
                 latMap = response.events.event[i].latitude;
                 longMap = response.events.event[i].longitude;
             //build html     
                 var builHTML = '';
-                builHTML += '<div class = "col-md-3 col-sm-4 card">';
-                builHTML += '<b class="title">' + response.events.event[i].title + '</b>';
-                builHTML += '<p> Event Address:' + response.events.event[i].venue_address + '</p>';
-                builHTML += '<p> Start Time:' + response.events.event[i].start_time + '</p>';
-                builHTML += '<p> Postal code:' + response.events.event[i].postal_code + '</p>';
-                builHTML += ' </div>';
+                builHTML += '<div class = "col-md-4">';
+                builHTML += '<div class="card-content">';
+                builHTML += '<h2 class="title">' + response.events.event[i].title + '</h2>';
+                builHTML += '<h1 class="card-date">'+ response.events.event[i].start_time +'</h1>';
+                builHTML += '<p class="card-address"><b>Venue Name</b>: ' + response.events.event[i].venue_name + '</p>';
+                builHTML += '<p class="card-address">' + response.events.event[i].venue_address +' - '+ response.events.event[i].region_abbr +' - ' +response.events.event[i].postal_code +'</p>';
+                builHTML += ' <div class="card-action"><a href="'+response.events.event[i].url +'">Learn More</a>';
+                builHTML += ' </div></div></div>';
+
+
                 $('#result').append(builHTML);
 
             //Call funtion to set markers on map
@@ -135,10 +145,39 @@ function initMap() {
     //Call library slide slick to create an infinite carousel
     function slideContent() {
         $(".regular").slick({
-            dots: true,
+            dots: false,
             infinite: true,
             slidesToShow: 4,
-            slidesToScroll: 3
+            slidesToScroll: 3,
+          
+            responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
         });
     }
 }
