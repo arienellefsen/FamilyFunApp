@@ -40,7 +40,7 @@ function addSubBtnClickListener(){
       return;
     }
     console.log('subscribe with' + email + ' for zipcode ' + zipcode);
-
+ $('.modal-title').text('Subscriber successfully added');
     var queryWithEmail = database.ref().orderByChild('email').equalTo(email);
     queryWithEmail.once('child_added', function(snapshot){
       //this is an existing user
@@ -72,6 +72,7 @@ function addSubBtnClickListener(){
           database.ref().push(newSubscriber);
             // Alert
           alert("Subscriber successfully added");
+         
       } 
     }); //handle add the data into DB  
 

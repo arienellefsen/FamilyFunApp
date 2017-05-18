@@ -374,6 +374,13 @@ margin-left: 18px;
     padding: 2px;
 }
 
+#message-subscribe{
+    color:#4e2f8d;
+    font-size: 24px;
+    margin-top:40px;
+    margin-left: 50px;
+}
+
  /*purple = '#4e2f8d';
  background: #f5f6f1;
  pink = #ac3792;
