@@ -266,14 +266,17 @@ text-align: center;
   color: white;
 }
 
+.hero-text h1{
+    font-size: 45px;
+}
+
 .result-display{
-    padding-top: 80px;
+   padding-top: 80px;
     height: 484px;
-
-    background: #F09819;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #edde5d, #edde5d);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #edde5d, #edde5d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #F09819;
+    background: -webkit-linear-gradient(to bottom, #edde5d, #edde5d);
+    background: linear-gradient(to bottom, #edde5d, #edde5d);
+    margin-top: 248px;
 }
 
 h1.title-widget{
@@ -405,8 +408,48 @@ color:#4e2f8d;
     height: 150px;
 }
 
- /*purple = '#4e2f8d';
- background: #f5f6f1;
- pink = #ac3792;
- grayText= '575859s'
- blye-text = '41b0d0'*/
+/* media query mobile devices */
+@media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 1024px) 
+    { 
+    button.subscribe {
+        margin-top: 7px;
+    }
+    .wrapper {
+    height: 149px;
+    }
+    .hero-text h1 {
+    font-size: 16px;
+}
+
+.search-form {
+    position: relative;
+    top: 111px;
+     height: 312px;
+    }
+
+    .zip-code {
+    margin-left: 22px;
+    margin-bottom: 10px;
+}
+
+select#radius {
+   margin-top: -5px;
+    margin-left: 20px;
+}
+
+#event-date {
+    margin-left: 20px;
+}
+#btnSearch {
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+.result-display {
+    margin-top: 98px;
+}
+
+}
+
