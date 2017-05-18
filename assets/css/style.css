@@ -371,7 +371,7 @@ select#radius{
     -webkit-padding-end: 20px;
     -webkit-padding-start: 2px;
     -webkit-user-select: none;
-    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#41b0d0, #41b0d0 40%, #41b0d0);
+    /*background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#41b0d0, #41b0d0 40%, #41b0d0);*/
     background-position: 97% center;
     background-repeat: no-repeat;
     color: #4e2f8d;    
