@@ -41,14 +41,12 @@ function initMap() {
                 },
                 success: function(response) {
                     handleResponse(response);
-                    console.log(urlQuery);
                 },
             }) // end ajax
         },
     };
 
     function handleResponse(response) {
-        console.log(response);
         //Check if we got data from API 
         //If there is no reponse, display message
         if (response.page_count === '0') {
@@ -121,7 +119,6 @@ function initMap() {
     function setMapOnAll(map) {
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(map);
-            console.log("markers: ", markers[i]);
         }
     }
     //Create a click event on search button and call display event function
@@ -145,7 +142,7 @@ function initMap() {
             $('#message').css('display', 'none');
         } else {
             $('#message').css('display', 'block');
-            $('#message').text('Search cannot be empty');
+            $('#message').text('Please provide a zip code');
         }
     });
 
