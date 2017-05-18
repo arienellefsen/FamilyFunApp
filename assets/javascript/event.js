@@ -86,7 +86,7 @@ function initMap() {
                 builHTML += '<h1 class="card-date">' + month + ' ' + date + ' at ' + hours + ':' + minutes + '</h1>';
                 builHTML += '<p class="card-address"><b>Venue Name</b>: ' + response.events.event[i].venue_name + '</p>';
                 builHTML += '<p class="card-address">' + response.events.event[i].venue_address + ' - ' + response.events.event[i].region_abbr + ' - ' + response.events.event[i].postal_code + '</p>';
-                builHTML += ' <div class="card-action"><a href="' + response.events.event[i].url + '">Learn More</a>';
+                builHTML += ' <div class="card-action"><a href="' + response.events.event[i].url + '" target="_blank">Learn More</a>';
                 builHTML += ' </div></div></div>';
                 $('#result').append(builHTML);
                 //Call funtion to set markers on map
@@ -133,7 +133,6 @@ function initMap() {
         var categoryFilter = $('#activities').val();
         var dateEvent = $('#event-date').val();
         // Need to validate if fields are not empty
-
 
         if (zip !== '') {
             familyFun.displayEvent(radius, zip, categoryFilter, dateEvent);

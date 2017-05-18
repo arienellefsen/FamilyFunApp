@@ -447,9 +447,30 @@ select#radius {
     margin-left: 20px;
 }
 
-.result-display {
-    margin-top: 98px;
+
+h1.title-widget {
+    margin-top: -102px;
 }
+
+.search-form {
+    
+    top: 158px;
+    height: 300px;
+}
+footer {
+    display: none;
+}
+
+.result-display {
+  
+    height: 484px;
+    margin-top: 248px;
+}
+button.slick-prev {
+    top: 164px;
+    left: -13px;
+}
+
 
 }
 
