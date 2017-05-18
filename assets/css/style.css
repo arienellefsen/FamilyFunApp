@@ -458,7 +458,7 @@ h1.title-widget {
     height: 300px;
 }
 footer {
-    display: none;
+    clear: both;
 }
 
 .result-display {
