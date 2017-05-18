@@ -150,6 +150,14 @@ button.slick-next {
     width: 220px;
     padding-top: 6px;
  }
+span#message{
+     display: none;
+    color: red;
+    font-weight: bold;
+    width: 220px;
+    padding-top: 6px;
+}
+
  #weather {
      display: none;
  }

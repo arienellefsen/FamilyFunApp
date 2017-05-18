@@ -3,7 +3,6 @@ var map;
 var markers = [];
 $("#imgSpinner1").hide();
 
-
 //initialize map
 function initMap() {
     var populateMap = {
@@ -12,16 +11,14 @@ function initMap() {
     };
 
     var monthNames = ["January", "February", "March", "April", "May", "June",
-	"July", "August", "September", "October", "November", "December"
-	];
+        "July", "August", "September", "October", "November", "December"
+    ];
 
     //Center map in the using USA lat and long coordinates
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: populateMap,
     });
-
-
 
     //Create a object called family with proprties to be used to search Api eventful 
     var familyFun = {
@@ -35,11 +32,16 @@ function initMap() {
                 url: urlQuery,
                 method: 'GET',
                 dataType: 'jsonp',
-                beforeSend: function () { $("#imgSpinner1").show(); },
-        // hides the loader after completion of request, whether successfull or failor.             
-        complete: function () { $("#imgSpinner1").hide(); },  
+                beforeSend: function() {
+                    $("#imgSpinner1").show();
+                },
+                // hides the loader after completion of request, whether successfull or failor.             
+                complete: function() {
+                    $("#imgSpinner1").hide();
+                },
                 success: function(response) {
                     handleResponse(response);
+                    console.log(urlQuery);
                 },
             }) // end ajax
         },
@@ -63,48 +65,41 @@ function initMap() {
 
             //display map
             $("#map").css('visibility', 'visible');
-            
-
 
             //loop through results
             for (var i = 0; i < 10; i++) {
-               
 
-var dateTime = new Date(response.events.event[i].start_time);
+                var dateTime = new Date(response.events.event[i].start_time);
                 var month = monthNames[dateTime.getMonth()];
                 var date = ("0" + dateTime.getDate()).slice(-2);
                 var hours = dateTime.getHours(); //returns 0-23
                 var minutes = dateTime.getMinutes();
-                if(minutes === 0)
+                if (minutes === 0)
                     minutes = '00';
 
 
                 latMap = response.events.event[i].latitude;
                 longMap = response.events.event[i].longitude;
-            //build html     
+                //build html     
                 var builHTML = '';
                 builHTML += '<div class = "col-md-4">';
                 builHTML += '<div class="card-content">';
                 builHTML += '<h2 class="title">' + response.events.event[i].title + '</h2>';
-                builHTML += '<h1 class="card-date">'+  month + ' ' + date +' at ' +hours +':'+ minutes+ '</h1>';
+                builHTML += '<h1 class="card-date">' + month + ' ' + date + ' at ' + hours + ':' + minutes + '</h1>';
                 builHTML += '<p class="card-address"><b>Venue Name</b>: ' + response.events.event[i].venue_name + '</p>';
-                builHTML += '<p class="card-address">' + response.events.event[i].venue_address +' - '+ response.events.event[i].region_abbr +' - ' +response.events.event[i].postal_code +'</p>';
-                builHTML += ' <div class="card-action"><a href="'+response.events.event[i].url +'">Learn More</a>';
+                builHTML += '<p class="card-address">' + response.events.event[i].venue_address + ' - ' + response.events.event[i].region_abbr + ' - ' + response.events.event[i].postal_code + '</p>';
+                builHTML += ' <div class="card-action"><a href="' + response.events.event[i].url + '">Learn More</a>';
                 builHTML += ' </div></div></div>';
-
-
                 $('#result').append(builHTML);
-
-            //Call funtion to set markers on map
+                //Call funtion to set markers on map
                 setMapOnAll(map);
-
-            //Populate map with markers
+                //Populate map with markers
                 populateMap = new google.maps.LatLng(Number(latMap), Number(longMap));
                 var marker = new google.maps.Marker({
                     position: populateMap,
                     map: map,
                 });
-            //Push markes to an array markers      
+                //Push markes to an array markers      
                 markers.push(marker);
             }
             //call slide function to display slider
@@ -129,7 +124,6 @@ var dateTime = new Date(response.events.event[i].start_time);
             console.log("markers: ", markers[i]);
         }
     }
-
     //Create a click event on search button and call display event function
     $("#btnSearch").click(function() {
         $('#result').empty();
@@ -142,13 +136,14 @@ var dateTime = new Date(response.events.event[i].start_time);
         var categoryFilter = $('#activities').val();
         var dateEvent = $('#event-date').val();
         // Need to validate if fields are not empty
+
+
         if (zip !== '') {
             familyFun.displayEvent(radius, zip, categoryFilter, dateEvent);
             getWeatherInfoByZipCode(zip);
             resetSearch();
             $('#message').css('display', 'none');
         } else {
-            console.log('zip cannot be empty');
             $('#message').css('display', 'block');
             $('#message').text('Search cannot be empty');
         }
@@ -156,9 +151,9 @@ var dateTime = new Date(response.events.event[i].start_time);
 
     //Clean input fields for new search 
     function resetSearch() {
-        var radius = $('#radius').val('20');
+        var radius = $('#radius').val('radius');
         var zip = $('#search').val('');
-        var categoryFilter = $('#activities').val('museum');
+        var categoryFilter = $('#activities').val('activity');
         var dateEvent = $('#event-date').val('');
     }
 
@@ -169,35 +164,32 @@ var dateTime = new Date(response.events.event[i].start_time);
             infinite: true,
             slidesToShow: 4,
             slidesToScroll: 3,
-          
-            responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
+
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
         });
     }
 }
