@@ -352,7 +352,7 @@ select#activities{
     background-position: 97% center;
     background-repeat: no-repeat;
     border: 1px solid #AAA;
-    color: #999;
+    color: #4e2f8d;
     font-size: inherit;
     margin: 20px;
     overflow: hidden;
@@ -374,7 +374,7 @@ select#radius{
     background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#41b0d0, #41b0d0 40%, #41b0d0);
     background-position: 97% center;
     background-repeat: no-repeat;
-    color: #999;    
+    color: #4e2f8d;    
     font-size: inherit;
     margin: 20px;
     overflow: hidden;
