@@ -82,9 +82,9 @@ function initMap() {
                 longMap = response.events.event[i].longitude;
                 //build html     
                 var builHTML = '';
-                builHTML += '<div class = "col-md-4">';
+                builHTML += '<div class = "col-md-4">'; ('very long string'.slice(0,10))+'...'
                 builHTML += '<div class="card-content">';
-                builHTML += '<h2 class="title">' + response.events.event[i].title + '</h2>';
+                builHTML += '<h2 class="title">' + (response.events.event[i].title.slice(0,60))+'...' + '</h2>';
                 builHTML += '<h1 class="card-date">' + month + ' ' + date + ' at ' + hours + ':' + minutes + '</h1>';
                 builHTML += '<p class="card-address"><b>Venue Name</b>: ' + response.events.event[i].venue_name + '</p>';
                 builHTML += '<p class="card-address">' + response.events.event[i].venue_address + ' - ' + response.events.event[i].region_abbr + ' - ' + response.events.event[i].postal_code + '</p>';
