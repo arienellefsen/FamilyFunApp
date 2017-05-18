@@ -1,0 +1,22 @@
+#page-header{
+  padding: 30px 0;
+  font-size: 50px;
+  color: #337ab7;
+  text-align: center;
+}
+
+footer {
+  padding: 30px 0;
+  font-size: 12px;
+  color: grey;
+  text-align: center;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+.panel {
+  margin-left: 50px;
+  margin-right: 50px;
+}

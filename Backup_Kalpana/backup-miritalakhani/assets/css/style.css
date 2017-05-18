@@ -1,0 +1,139 @@
+body {
+  font-family: OCR A Std, monospace, Arial, "Helvetica Neue", Helvetica, sans-serif, Chalkduster,fantasy;
+  font-size: 18px;
+  line-height: 34px;
+  color: #777; 
+  background: url("../images/background.jpeg");
+}
+
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* header */
+
+#masthead {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height:60px;
+  text-align: center;
+  font-size: 34px;
+  width: 100%;
+  padding: 3px 0; /* increase padding */
+  margin: 10 10 10px;
+  overflow: auto;
+  color: #8585CE;
+  background: #F4DBC2;
+  border-bottom: 2px solid #ccc; 
+
+   /*  height:50px;
+    background:#F0F0F0;
+    border:1px solid #CCC;
+    width:960px;
+    margin:0px auto;*/
+} 
+
+ /* .auth-image {
+  float: left;
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+  margin-right: 25px; 
+} */
+
+input{
+	margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 10px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+  color: #4aaaa5;
+}
+
+h1 {
+  padding-top: 50px;	
+  padding-bottom: 10px;
+  font-size: 30px;
+  line-height: 49px;
+
+}
+
+h2,
+h3 {
+  font-size: 22px;
+}
+
+.panel-body{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.submit {
+    position: absolute;
+    top: 99%;
+     margin-bottom: 10px;
+	 margin-top: 05px;
+	 margin-left: -18px;
+	 background-color: #f4f442;
+	 padding: 06px 10px 06px 10px;
+}
+
+.dropdown{
+	 margin-bottom: 2px;
+	 margin-top: 3px;
+	}
+
+.dropdown {
+  position: absolute;
+  float: left;
+  width: 100%;
+  max-width: 270px;
+  padding: 30px;
+  margin-bottom: 10px;
+  margin-left: 19px;
+  /*background: #fff; 
+  border: 1px solid #ddd; */
+}
+
+#submit{
+	 margin-bottom: 0px;
+	 margin-top: 13px;
+	 background-color: #f4f442;
+	 float: left;
+	}
+
+
+footer {
+
+  padding: 10px 0 08px 0;
+  margin: 380px 0 10px 0px;
+  clear: both;
+  font-size: 12px;
+  color: #ffa500;
+  text-align: center;
+  background: #666;
+  border-top: 08px solid #4aaaa5;
+}
