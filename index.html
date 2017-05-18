@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Family Fun App - Activities for family around your aerea</title>
+    <!--<meta>tag to control layout on Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Font-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Boostrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+<body>
+    
+<div id="wrap">  
+<header>
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="logo">Family Fun</div>
+                </div>
+                <div class="col-md-2">
+                   <button type="button" class="btn btn-info btn-lg subscribe" data-toggle="modal" data-target="#myModal"> <i class="fa fa-envelope subscribe" aria-hidden="true"></i>
+Subscribe</button>
+
+                </div>
+                </div>
+            </div>
+        </div>
+        </header>
+    <div class="wrapper">
+        
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Subscribe To Family Fun</h4>
+      </div>
+      <div class="modal-body">
+        
+<form class="form" id='subscribe-form'>
+				  <div class="form-group">
+				    <label for="zip">Zipcode</label>
+				    <input type="text" class="form-control" id="zipcode" placeholder="08540">
+				  </div>
+					<div class="form-group">
+				    <label for="name">Name</label>
+				    <input type="text" class="form-control" id="name" placeholder="yourname">
+				  </div>
+				  <div class="form-group">
+				    <label for="email">Email Address</label>
+				    <input type="text" class="form-control" id="email" placeholder="yourname@gmail.com">
+				  </div>
+				  <input type="submit" class="btn btn-default" id="subscribe" value="Subscribe">
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Modal -->
+
+
+
+        <!--Search form-->
+        <div class="container">
+        <div class="hero-text">
+             <h1 style="font-size:50px">Find fun activities for your family near you</h1>
+         </div>
+
+            <div class="search-form">
+                <div class="col-md-2">
+                   
+                    <input type="text" class="form-control" name="search" id="search" placeholder="Zip code">
+                    <span id="message"></span>
+
+                    <span id="message-no-result"></span>
+                </div>
+
+                <div class="col-md-2">
+                    <select id="activities" class="select-style">
+                <option value="museum">Museum</option>
+                <option value="film">Film</option>
+                <option value="park">Park</option>
+                <option value="library">library</option>
+            </select>
+                </div>
+                <div class="col-md-2">
+                    <select id="radius">
+                <option value="20">20</option>
+                <option value="40">40</option>
+                <option value="60">60</option>
+                <option value="80">80</option>
+            </select>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="date" name="edate" id="event-date">
+                </div>
+
+                 <div class="col-md-4">
+                    <button class="btn btn-primary" type="button" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Search</button>
+                </div>
+            </div>
+        </div>
+
+ </div>
+
+        <!--Slide-->
+        <div class="result-display">
+            <div class="container">
+                  <div class="row">
+                        <div class="col-md-12">
+                            <section class="regular slider" id="result">
+              
+                           </section>
+              
+<div class="prev"></div>
+        <div class="next"></div>
+            
+       
+
+            </div>
+        </div>
+        </div>
+        <!--end container-->
+
+        <!--Map-->
+        <div class="container widget">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="title-widget"> <i class="fa fa-map-marker icon-widget" aria-hidden="true"></i>
+Map of the events near you </h1>
+                    <div id="map"></div>
+
+                </div>
+                <!--Weather-->
+                <div class="col-md-4">
+                    <h1 class="title-widget"> <i class="fa fa-sun-o icon-widget" aria-hidden="true"></i>
+Check the weather for that week </h1>
+                    <section id="weather"></section>
+                </div>
+            </div>
+
+
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh1l_6KVhqM13ZPGDkie-l8wOrHLv6S1I&callback=initMap">
+            </script>
+
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</div>
+
+ <div class="container">
+                  <div class="row">
+<footer id="footer">
+    <p>Copyright 2017 @</p>
+</footer>
+</div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="./assets/javascript/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg=" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/event.js"></script>
+    <script type="text/javascript" src="./assets/javascript/weather.js"></script>
+        <script type="text/javascript" src="./assets/javascript/subscribe.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+
+</body>
+
+</html>
