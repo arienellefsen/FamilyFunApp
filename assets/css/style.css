@@ -286,12 +286,7 @@ i.icon-widget{
 }
 
 /* Set the fixed height of the footer here */
-#footer {
-  height: 30px;
-  background-color: fff;
-  color:#4e2f8d;
-  text-align: center;
-}
+
 
 button.subscribe {
      background:none!important;
@@ -379,6 +374,14 @@ margin-left: 18px;
     font-size: 24px;
     margin-top:40px;
     margin-left: 50px;
+}
+
+footer{
+    color:#4e2f8d;
+}
+
+.fa-facebook-square, .fa-twitter-square, .fa-linkedin-square, .fa-youtube-square{
+color:#4e2f8d;
 }
 
  /*purple = '#4e2f8d';
