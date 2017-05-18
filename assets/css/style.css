@@ -308,6 +308,12 @@ i.subscribe{
     font-size: 18px;
 }
 
+img.logo-img{
+        margin-top: -11px;
+        margin-right: 10px;
+
+}
+
 .zip-code{
    background: transparent;
     border: 3px solid #41b0d0;

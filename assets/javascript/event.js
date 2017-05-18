@@ -4,8 +4,6 @@ var markers = [];
 $("#imgSpinner1").hide();
 
 
-result-display
-
 //initialize map
 function initMap() {
     var populateMap = {
