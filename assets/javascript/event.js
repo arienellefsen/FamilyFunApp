@@ -8,11 +8,17 @@ function initMap() {
         lat: 42.877742,
         lng: -97.380979
     };
+
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+	"July", "August", "September", "October", "November", "December"
+	];
+
     //Center map in the using USA lat and long coordinates
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: populateMap,
     });
+
 
 
     //Create a object called family with proprties to be used to search Api eventful 
@@ -41,7 +47,7 @@ function initMap() {
         if (response.page_count === '0') {
             $('#message-no-result')
                 .css('display', 'block')
-                .text('No results found. Please try another zip code');
+                .text('Please try another zip code');
             return;
         } else {
             //If we did get the data call build html to display data 
@@ -59,6 +65,15 @@ function initMap() {
             for (var i = 0; i < 10; i++) {
                
 
+var dateTime = new Date(response.events.event[i].start_time);
+                var month = monthNames[dateTime.getMonth()];
+                var date = ("0" + dateTime.getDate()).slice(-2);
+                var hours = dateTime.getHours(); //returns 0-23
+                var minutes = dateTime.getMinutes();
+                if(minutes === 0)
+                    minutes = '00';
+
+
                 latMap = response.events.event[i].latitude;
                 longMap = response.events.event[i].longitude;
             //build html     
@@ -66,7 +81,7 @@ function initMap() {
                 builHTML += '<div class = "col-md-4">';
                 builHTML += '<div class="card-content">';
                 builHTML += '<h2 class="title">' + response.events.event[i].title + '</h2>';
-                builHTML += '<h1 class="card-date">'+ response.events.event[i].start_time +'</h1>';
+                builHTML += '<h1 class="card-date">'+  month + ' ' + date +' at ' +hours +':'+ minutes+ '</h1>';
                 builHTML += '<p class="card-address"><b>Venue Name</b>: ' + response.events.event[i].venue_name + '</p>';
                 builHTML += '<p class="card-address">' + response.events.event[i].venue_address +' - '+ response.events.event[i].region_abbr +' - ' +response.events.event[i].postal_code +'</p>';
                 builHTML += ' <div class="card-action"><a href="'+response.events.event[i].url +'">Learn More</a>';
