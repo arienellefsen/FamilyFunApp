@@ -27,8 +27,8 @@
  #btnSearch {
     margin-top: -12px;
     color: #fff;
-    background-color: #4e2f8d;
-    border-color: #4e2f8d;
+    background-color: #ac3792;
+    border-color: #ac3792;
     margin-left: -64px;
     width: 134px;
     padding: 17px;
@@ -40,7 +40,7 @@
  }
 
 #btnSearch:hover{
-    background-color: #ac3792;
+    background-color: #4e2f8d;
 
 }
 
@@ -102,7 +102,7 @@
 }
 button.slick-prev{
     background:none!important;
-     color:#ac3792;
+     color:#edde5d;
      border:none; 
      padding:0!important;
      font: inherit;
@@ -117,7 +117,7 @@ button.slick-prev{
 
 button.slick-next {
    background: none!important;
-    color: #ac3792;
+    color: #edde5d;
     border: none;
     padding: 0!important;
     font: inherit;
@@ -188,7 +188,8 @@ h2.title{
 }
 
 .card-action{
-    background-color: #4e2f8d;
+    background-color: #ac3792;
+
     color: #fff;
     text-align: center;
     font-size: 18px;
@@ -201,7 +202,8 @@ h2.title{
 }
 .card-action:hover{      
     background-color: #ac3792;
-   
+    background-color: #4e2f8d;
+
     }
 
 .card-action a:link{   
@@ -257,9 +259,13 @@ text-align: center;
 }
 
 .result-display{
-    background: #ac3792;
     padding-top: 80px;
     height: 484px;
+
+    background: #F09819;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #edde5d, #edde5d);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #edde5d, #edde5d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 h1.title-widget{
