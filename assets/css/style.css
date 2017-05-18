@@ -384,6 +384,13 @@ footer{
 color:#4e2f8d;
 }
 
+#imgSpinner1{
+        background-image: url(../images/spin.gif);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 150px;
+}
+
  /*purple = '#4e2f8d';
  background: #f5f6f1;
  pink = #ac3792;

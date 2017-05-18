@@ -1,6 +1,10 @@
 //Create variables for map
 var map;
 var markers = [];
+$("#imgSpinner1").hide();
+
+
+result-display
 
 //initialize map
 function initMap() {
@@ -33,6 +37,9 @@ function initMap() {
                 url: urlQuery,
                 method: 'GET',
                 dataType: 'jsonp',
+                beforeSend: function () { $("#imgSpinner1").show(); },
+        // hides the loader after completion of request, whether successfull or failor.             
+        complete: function () { $("#imgSpinner1").hide(); },  
                 success: function(response) {
                     handleResponse(response);
                 },
