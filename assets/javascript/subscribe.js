@@ -39,24 +39,47 @@ function addSubBtnClickListener(){
       alert("Please fill in all the information.");
       return;
     }
+    console.log('subscribe with' + email + ' for zipcode ' + zipcode);
 
-    // Creates local "temporary" object for holding employee data
-    var newSubscriber = {
-      zipcode: zipcode,
-      username: name,
-      email: email
-    };
+    var queryWithEmail = database.ref().orderByChild('email').equalTo(email);
+    queryWithEmail.once('child_added', function(snapshot){
+      //this is an existing user
+      console.log("find key: " + snapshot.key);
+      var subscribedZipcodes = snapshot.val().zipcode;
+      if(subscribedZipcodes.indexOf(zipcode) != -1){
+        console.log("found zipcode " + zipcode + " in " + subscribedZipcodes);
+      } else {
+        subscribedZipcodes += ',' + zipcode;
+        console.log("update " + snapshot.key + ' with zipcode ' + subscribedZipcodes);
+        database.ref().child(snapshot.key).update({zipcode: subscribedZipcodes});
+      }
+    }); //handle add the data into DB
 
-    // Uploads employee data to the database
-    database.ref().push(newSubscriber);
-    // Alert
-    alert("Subscriber successfully added");
+    queryWithEmail.once("value", function(snapshot){
+      if (snapshot.exists()){
+        /*snapshot.forEach(function(child) {
+          ..
+        });*/
+      } else {
+          console.log('No child exists');
+          var newSubscriber = {
+            zipcode: zipcode,
+            username: name,
+            email: email
+          };
+
+          // Uploads employee data to the database
+          database.ref().push(newSubscriber);
+            // Alert
+          alert("Subscriber successfully added");
+      } 
+    }); //handle add the data into DB  
 
     // Clears all of the text-boxes
     $("#zipcode").val("");
     $("#name").val("");
     $("#email").val("");
-  });
+  }); //add listener
 }
 
 $(document).ready(function(){
@@ -68,5 +91,4 @@ $(document).ready(function(){
   $('#current-time').text(currentTime.format());
 
   addSubBtnClickListener();
-
 });
