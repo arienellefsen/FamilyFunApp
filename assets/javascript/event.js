@@ -47,6 +47,8 @@ function initMap() {
     };
 
     function handleResponse(response) {
+      $('#btnSearch').removeAttr('disabled');
+
         //Check if we got data from API 
         //If there is no reponse, display message
         if (response.page_count === '0') {
@@ -122,8 +124,12 @@ function initMap() {
             markers[i].setMap(map);
         }
     }
+
+
+
     //Create a click event on search button and call display event function
     $("#btnSearch").click(function() {
+
         $('#result').empty();
         $("#weather").empty();
         $("#weather").css('display', 'none');
@@ -136,6 +142,8 @@ function initMap() {
         // Need to validate if fields are not empty
 
         if (zip !== '' && categoryFilter !=='' && radius !== '' && dateEvent !=='') {
+             $(this).attr("disabled","disabled");
+
             familyFun.displayEvent(radius, zip, categoryFilter, dateEvent);
             getWeatherInfoByZipCode(zip);
             resetSearch();
