@@ -75,7 +75,6 @@ function initMap() {
                 if (minutes === 0)
                     minutes = '00';
 
-
                 latMap = response.events.event[i].latitude;
                 longMap = response.events.event[i].longitude;
                 //build html     
@@ -136,14 +135,15 @@ function initMap() {
         var dateEvent = $('#event-date').val();
         // Need to validate if fields are not empty
 
-        if (zip !== '') {
+        if (zip !== '' && categoryFilter !=='' && radius !== '' && dateEvent !=='') {
             familyFun.displayEvent(radius, zip, categoryFilter, dateEvent);
             getWeatherInfoByZipCode(zip);
             resetSearch();
             $('#message').css('display', 'none');
         } else {
             $('#message').css('display', 'block');
-            $('#message').text('Please provide a zip code');
+           console.log($(this).attr('title'));
+            $('#message').text('Please all the fields are required!');
         }
     });
 
