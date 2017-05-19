@@ -209,7 +209,7 @@ h2.title{
     transition: background-color 1000ms linear;
     position: fixed;
     bottom: 18px;
-    width: 148px;
+    width: 192px;
 }
 .card-action:hover{      
     background-color: #ac3792;
@@ -350,7 +350,7 @@ select#activities{
     overflow: hidden;
     padding: 5px 10px;
     width: 200px;
-    margin-top: 4px;
+    margin-top: 1px;
 }
 
 
@@ -362,7 +362,7 @@ select#radius{
     overflow: hidden;
     padding: 5px 10px;
     width: 200px;
-    margin-top: 4px;
+    margin-top: 1px;
     margin-left: 65px;
 }
 

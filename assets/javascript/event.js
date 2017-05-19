@@ -150,7 +150,7 @@ function initMap() {
             $('#message').css('display', 'none');
         } else {
             $('#message').css('display', 'block');
-           console.log($(this).attr('title'));
+           
             $('#message').text('Please all the fields are required!');
         }
     });

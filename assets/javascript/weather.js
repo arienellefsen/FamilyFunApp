@@ -17,11 +17,8 @@ function getWeatherInfoByZipCode(zipcode){
       // We store all of the retrieved data inside of an object called "response"
       .done(function(response) {
 
-        // Log the queryURL
-        console.log(queryURL);
 
         // Log the resulting object
-        //console.log(response);
         $("#zipcode").html("Weather Forecase for " + zipcode + " <small>based on info from station at "  + response.city.name + "</small>");
 
         $.each(response.list, function(index, val){
@@ -32,8 +29,6 @@ function getWeatherInfoByZipCode(zipcode){
             var minfdegree = Math.round(this.temp.min * 9 / 5 + 32);
             var iconid = this.weather[0].icon;
 
-            console.log('Max temp: ' +maxfdegree);
-            //<img src='http://openweathermap.org/img/w/" + weatherDataIn.weather[0].icon + ".png'>
 
             $("#weather").append("<tr><td>" 
                 //+ this.weather[0].main 
