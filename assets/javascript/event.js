@@ -99,6 +99,8 @@ function initMap() {
                 });
                 //Push markes to an array markers      
                 markers.push(marker);
+                map.setZoom(10);
+                map.panTo(marker.position);
             }
             //call slide function to display slider
             slideContent();
