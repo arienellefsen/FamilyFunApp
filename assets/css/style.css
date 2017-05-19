@@ -173,7 +173,7 @@ span#message{
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding: 5px 25px 25px 25px;
-    height: 320px;
+    height: 346px;
 }
  
 .card-content:hover {
@@ -208,8 +208,8 @@ h2.title{
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
     position: fixed;
-    bottom: 40px;
-    width: 194px;
+    bottom: 18px;
+    width: 148px;
 }
 .card-action:hover{      
     background-color: #ac3792;
@@ -381,6 +381,7 @@ margin-left: 18px;
 
 footer{
     color:#4e2f8d;
+    clear:both;
 }
 
 .fa-facebook-square, .fa-twitter-square, .fa-linkedin-square, .fa-youtube-square{
@@ -429,7 +430,7 @@ select#radius {
 
 
 h1.title-widget {
-    margin-top: -102px;
+    margin-top: 20px;
 }
 
 .search-form {
@@ -444,11 +445,16 @@ footer {
 .result-display {
   
     height: 484px;
-    margin-top: 248px;
+    margin-top: 158px;
 }
 button.slick-prev {
     top: 164px;
     left: -13px;
+}
+
+.search-form {
+  box-shadow: none;
+ 
 }
 
 

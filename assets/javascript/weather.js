@@ -6,7 +6,7 @@
       "q=Princeton,US&appid=" + APIKey;*/
 
 function getWeatherInfoByZipCode(zipcode){
-    var queryURL = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast/daily?zip=" 
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" 
                     + zipcode + ",us&units=metric&cnt=10&APPID=9653db8b375a737b2906b1e0b371726c";
 
     // Here we run our AJAX call to the OpenWeatherMap API
